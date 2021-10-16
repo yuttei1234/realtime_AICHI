@@ -25,7 +25,7 @@ Realtime AICHI は観光情報提供 WEB サイトです。
 リアルタイムの「愛知」の魅力を様々な人たちに知ってもらいと思い、このサイトを
 作成しました。
 
-### ターゲットユーザ
+### ターゲットユーザー
 
 愛知へ遊びに来る観光客/SNS の使用に使い慣れている若年層
 
@@ -35,6 +35,17 @@ Realtime AICHI は観光情報提供 WEB サイトです。
 
 ## 設計書
 
+### ワイヤーフレーム
+https://docs.google.com/presentation/d/1jG2JeD0YpQDJazdKNGr1HBd3MqYQ3Q5Nwdc2UlOe3iw/edit#slide=id.p
+
+### ER図
+https://app.diagrams.net/#G1rc-mJ2FIIY4Y7dWoccwK1roQzGwphEV2
+
+### テーブル定義書
+https://docs.google.com/spreadsheets/d/1Lk2uEbYqzGOjD2lYoArUIWrOrIAGuVQlv0WwSho9-ww/edit#gid=1243549839
+
+### アプリケーション詳細設計図
+https://docs.google.com/spreadsheets/d/1zZk6HtWtSsy5PduUFapZoCvHCGx0_0fq/edit#gid=549108681
 
 ## チャレンジ要素一覧
 
