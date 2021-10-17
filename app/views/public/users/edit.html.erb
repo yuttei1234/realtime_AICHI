@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <h2 class="m-1">会員詳細情報編集</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10">
+        <%= form_with model:@user, url: public_user_path(@user), local:true do |f| %>
+        <table>
+          <tbody>
+            <tr>
+              <td><%= f.label :name, "ユーザー名" %></td>
+              <td><%= f.text_field :name %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :email, "メールアドレス"  %></td>
+              <td><%= f.email_field :email, autocomplete: "email" %></td>
+            </tr>
+            </tr>
+            <tr>
+              <td><%= f.label :telephone_number, "電話番号" %></td>
+              <td><%= f.text_field :telephone_number  %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :introduction, "自己紹介" %></td>
+              <td><%= f.text_field :introduction  %></td>
+            </tr>
+            <tr>
+              <td>
+                <%= f.submit "編集を保存", class: "btn btn-success editprofile" %>
+                <%= link_to "退会する", unsubscribe_public_users_path, class: "btn btn-danger" %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <% end %>
+    </div>
+  </div>
+</div>

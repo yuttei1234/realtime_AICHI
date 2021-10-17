@@ -17,21 +17,21 @@ Rails.application.routes.draw do
   end
 
   resources :post_images, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
-    resource :favorites, only: [:create, :destroy]    
+    resource :favorites, only: [:create, :destroy]
   resources :post_comments, only: [:create, :destroy]
   end
-  
-  resources :recommendation, only: [:index]  
+
+  resources :recommendation, only: [:index]
   resources :contacts, only: [:new, :create]
   end
-  
+
   #以下、admin(管理者)関連のルーティング設定
 
   namespace :admins do
   get '/', to: 'homes#top'
-  
+
   resources :users, only: [:index, :show, :edit, :update]
-  resources :contacts, only: [:index, :show]   
+  resources :contacts, only: [:index, :show]
 
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
