@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', '~> 1.3.6'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -46,3 +46,13 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'devise'
+
+gem "refile", require: "refile/rails", github: 'manfe/refile' #ファイルアップロード機能
+gem "refile-mini_magick" # アップロードした画像のリサイズ機能
+gem 'bootstrap', '~> 4.5' #Bootstrap機能
+gem 'pry-byebug' #デバック機能
+gem 'kaminari', '~> 1.2.1' #ページネーション機能
+gem "pry-rails"  #デバック機能
+gem 'enum_help' #Enum(翻訳)機能
