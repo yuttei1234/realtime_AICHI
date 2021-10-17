@@ -9,6 +9,70 @@
   </head>
 
   <body>
+    <header>
+      <nav class="navbar navbar-expand">
+        <div class="container">
+          <nav class="navbar navbar-light navbar-left">
+
+          <% if request.url.include?('admin')  %>
+            <a href="/admins">
+              <%= image_tag '', size:'300x80' %>  <%# サイトのロゴマークは探して別途追加%>
+            </a>
+              <% else %>
+            <a href="/">
+              <%= image_tag '', size:'300x80' %>  <%# サイトのロゴマークは探して別途追加%>
+            </a>
+            <% end %>
+          </nav>
+
+            <ul class="navbar-nav bg-test_text">
+              <%#以下、管理者がログインした場合%>
+                <% if admin_signed_in? %>
+                  <li class="nav-item">
+                    <%= link_to " 会員一覧", admin_users_path, class: "fas fa-users nav-link bg-light text-dark btn btn-light" %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to " 問い合わせ", admins_contacts_path, class: "fas fa-align-right nav-link bg-light text-dark btn btn-light" %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to " ログアウト", destroy_admin_session_path, method: :delete, class: "fas fa-sign-out-alt nav-link bg-light text-dark btn btn-light"  %>
+                  </li>
+
+                  <%#以下、会員がログインした場合%>
+                  <% elsif customer_signed_in? %>
+                  <li>
+                    ようこそ、<%= current_user.name %>さん！
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to " マイページ", public_user_path(current_user.id), class: "fas fa-user nav-link bg-light text-dark btn btn-light" %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to " オススメ", public_recommendation_path, class: "fas fa-map-marker-check nav-link bg-light text-dark btn btn-light" %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to " 問い合わせ", new_public_contact_path, class: "fas fa-align-right nav-link bg-light text-dark btn btn-light" %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to " ログアウト", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt nav-link bg-light text-dark btn btn-light" %>
+                  </li>
+
+                  <%#以下、管理者/会員がログインしていない場合%>
+                  <% else %>
+                  <li class="nav-item">
+                    <%= link_to " 新規登録", new_user_registration_path, class: "fas fa-user-plus nav-link bg-light text-dark btn btn-light" %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to " About", homes_about_path, class: "fas fa-link nav-link bg-light text-dark btn btn-light" %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to " ログイン", new_user_session_path, class: "fas fa-sign-in-alt nav-link bg-light text-dark btn btn-light" %>
+                  </li>
+                  <% end %>
+
+            </ul>
+        </div>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
