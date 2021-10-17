@@ -38,8 +38,8 @@
                     <%= link_to " ログアウト", destroy_admin_session_path, method: :delete, class: "fas fa-sign-out-alt nav-link bg-light text-dark btn btn-light"  %>
                   </li>
 
-                  <%#以下、会員がログインした場合%>
-                  <% elsif customer_signed_in? %>
+                  <%#以下、会員がログインした時%>
+                  <% elsif user_signed_in? %>
                   <li>
                     ようこそ、<%= current_user.name %>さん！
                   </li>
@@ -56,7 +56,7 @@
                     <%= link_to " ログアウト", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt nav-link bg-light text-dark btn btn-light" %>
                   </li>
 
-                  <%#以下、管理者/会員がログインしていない場合%>
+                  <%#以下、管理者/会員がログインしていない時%>
                   <% else %>
                   <li class="nav-item">
                     <%= link_to " 新規登録", new_user_registration_path, class: "fas fa-user-plus nav-link bg-light text-dark btn btn-light" %>
