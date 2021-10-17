@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <h3>会員詳細情報</h3>
+      <div class="col-md-12">
+        <table>
+          <tbody>
+            <tr>
+              <td>会員No.</td>
+              <td><%= @user.id%></td>
+            </tr>
+             <tr>
+              <td>ユーザー名</td>
+              <td><%= @user.name %></td>
+            </tr>
+            <tr>
+              <td>メールアドレス</td>
+              <td><%= @user.email %></td>
+            </tr>
+            <tr>
+              <td>電話番号</td>
+              <td><%= @user.telephone_number %></td>
+            </tr>
+            <tr>
+              <td>会員ステータス</td>
+              <td>
+                <% if @user.validation == false %>
+                  有効
+                <% else %>
+                  退会
+                <% end %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-2">
+      <%= link_to "情報を編集", edit_admins_user_path(@user.id), class: "btn btn-success" %>
+    </div>
+  </div>
+</div>

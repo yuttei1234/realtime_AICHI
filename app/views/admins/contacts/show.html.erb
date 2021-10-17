@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <h3>問い合わせ詳細情報</h3>
+      <div class="col-md-12">
+        <table>
+          <tbody>
+            <tr><td>ユーザー名</td></tr>
+            <tr><td><%= @user.name %></td></tr>
+            <tr><td>問い合わせタイトル</td></tr>
+            <tr><td><%= @contact.title %></td></tr>
+            <tr><td>問い合わせ本文</td></tr>
+            <tr><td><%= @contact.message %></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-md-5 offset-md-1">
+      <%= link_to "一覧へ戻る", admins_contacts_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
