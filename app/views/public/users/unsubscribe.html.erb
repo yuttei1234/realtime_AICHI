@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-4 text-center">
+      <h2><strong>退会確認画面</strong></h2>
+      <p>退会後、会員情報の閲覧権限や新規投稿権限を失効します。</p>
+      <p>退会する場合は「退会する」をクリックして下さい。</p>
+        <%= link_to "退会しない",public_user_path(current_user.id), class:"btn btn-primay" %>
+        <%= link_to "退会する", withdraw_public_users_path, method: :patch, class:"btn btn-danger" %>
+    </div>
+  </div>
+</div>
