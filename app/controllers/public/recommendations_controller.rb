@@ -4,7 +4,7 @@ class Public::RecommendationsController < ApplicationController
   end
   
   def recommendation_params
-    params.require(:recommendation).permit(:latitude, :longitude)
+    params.require(:recommendation).permit(:address, :latitude, :longitude)
   end
   
 end

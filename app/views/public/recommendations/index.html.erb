@@ -5,6 +5,9 @@
        var map = new google.maps.Map(document.getElementById('map'), {
                  zoom: 17,
                  center: test
+                 mapTypeControl: false,
+                 streetViewControl: false
+
                  });
        var transitLayer = new google.maps.TransitLayer();
        transitLayer.setMap(map);
