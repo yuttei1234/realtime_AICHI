@@ -1,0 +1,29 @@
+<script type="text/javascript">
+     function initMap() {
+       geocoder = new google.maps.Geocoder()
+       var test = {lat:35.1837821, lng:136.8993188 };
+       var map = new google.maps.Map(document.getElementById('map'), {
+                 zoom: 17,
+                 center: test
+                 });
+       var transitLayer = new google.maps.TransitLayer();
+       transitLayer.setMap(map);
+       var contentString = '住所：愛知県名古屋市中区本丸1-1';
+       var infowindow = new google.maps.InfoWindow({
+         content: contentString
+       });
+       var marker = new google.maps.Marker({
+                     position:test,
+                     map: map,
+                     title: contentString
+                   });
+     }
+   </script>
+   <script async defer
+             src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+   </script>
+   <style type="text/css">
+     #map { height: 400px;
+           width: 100%;}
+   </style>
+   <div id="map"></div>
