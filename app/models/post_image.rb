@@ -9,6 +9,10 @@ class PostImage < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end
 
+  validates :title, presence: true
+  validates :caption, presence: true
+  validates :caption, length: { maximum: 200 }
+
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
