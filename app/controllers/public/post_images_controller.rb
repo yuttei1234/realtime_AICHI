@@ -1,2 +1,28 @@
 class Public::PostImagesController < ApplicationController
+  
+  def index
+  end
+
+  def new
+  end  
+
+  def create
+  end  
+  
+  def show
+  end  
+  
+  def edit
+  end  
+  
+  def update
+  end  
+  
+  def destroy
+  end  
+  
+  def post_image_params
+    params.require(:post_image).permit(:user_id, :image_id, :title, :caption, :address, :latitude, :longitude)
+  end
+  
 end

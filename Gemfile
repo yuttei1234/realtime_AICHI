@@ -57,3 +57,4 @@ gem 'kaminari', '~> 1.2.1' #ページネーション機能
 gem "pry-rails"  #デバック機能
 gem 'enum_help' #Enum(翻訳)機能
 gem 'dotenv-rails'
+gem 'geocoder'
