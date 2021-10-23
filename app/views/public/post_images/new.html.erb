@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-1">
+      <h4>新規投稿</h4>
+        <% if @post_image.errors.any? %>
+          <%= @post_image.errors.count %>件がエラーが発生しました。
+          <% @post_image.errors.full_messages.each do |message| %>
+            <%= message %>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9 offset-md-3">
+      <%= form_with model: @post_image, url: public_post_images(post_image.id),local:true do |f| %>
+
+      <%= f.label :image, "画像" %>
+      <%= f.attachment_field :image %>
+
+      <%= f.label :title, "タイトル" %>
+      <%= f.text_field :title, class:"form-control" %>
+
+      <%= f.label :caption, "本文" %>
+      <%= f.text_area :caption, class:"form-control", placeholder: "コメント入力" %>
+
+      <%# 地図機能追加予定%>
+
+      <%= f.submit "投稿", class:"btn btn-success" %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
