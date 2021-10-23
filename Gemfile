@@ -52,10 +52,11 @@ gem 'devise'
 gem "refile", require: "refile/rails", github: 'manfe/refile' #ファイルアップロード機能
 gem "refile-mini_magick" # アップロードした画像のリサイズ機能
 gem 'bootstrap', '~> 4.5' #Bootstrap機能
+gem 'jquery-rails' #Bootstrap機能
 gem 'pry-byebug' #デバック機能
 gem 'kaminari', '~> 1.2.1' #ページネーション機能
 gem "pry-rails"  #デバック機能
 gem 'enum_help' #Enum(翻訳)機能
 gem 'dotenv-rails' #地図/暗号保護機能
 gem 'geocoder' #地図機能
-gem 'font-awesome-sass'
+gem 'font-awesome-sass' #font-awesome付与機能

@@ -31,7 +31,7 @@
               <%#以下、管理者がログインした場合%>
                 <% if admin_signed_in? %>
                   <li class="nav-item">
-                    <%= link_to " 会員一覧", admin_users_path, class: "fas fa-users nav-link bg-light text-dark btn btn-light" %>
+                    <%= link_to " 会員一覧", admins_users_path, class: "fas fa-users nav-link bg-light text-dark btn btn-light" %>
                   </li>
                   <li class="nav-item">
                     <%= link_to " 問い合わせ", admins_contacts_path, class: "fas fa-align-right nav-link bg-light text-dark btn btn-light" %>

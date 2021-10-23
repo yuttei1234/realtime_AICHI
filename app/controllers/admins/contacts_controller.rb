@@ -1,7 +1,7 @@
 class Admins::ContactsController < ApplicationController
   def index
     @contacts = Contact.all
-    @cotancts = Contact.page(params[:page]).per(10)
+    @contacts = Contact.page(params[:page]).per(10)
   end
 
   def show
