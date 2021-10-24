@@ -1,21 +1,21 @@
 
 <h4>アクセスマップ</h4>
 
-  <div id="map"></div>
+  <div id="map-01"></div>
    <script async defer
              src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
    </script>
    <style type="text/css">
-     #map { height: 400px;
-            width: 70%;
-          }
+     #map-01 { height: 400px;
+               width: 70%;
+             }
    </style>
-  
+
    <script type="text/javascript">
-     function initMap() {
+     function initMap01() {
        geocoder = new google.maps.Geocoder()
        var test = {lat:35.1847893, lng:136.8997882 };
-       var map = new google.maps.Map(document.getElementById('map'), {
+       var map = new google.maps.Map(document.getElementById('map-01'), {
                  zoom: 17,
                  center: {lat:35.1847893, lng:136.8997882 },
                  mapTypeControl: false,
@@ -34,12 +34,19 @@
                    });
      }
      </script>
-     
+
+
+   <div id="map-02"></div>
+    <style type="text/css">
+     #map-02 { height: 400px;
+               width: 70%;
+             }
+    </style>
      <script type="text/javascript">
-     function initMap() {
+     function initMap02() {
        geocoder = new google.maps.Geocoder()
        var test = {lat:35.1847893, lng:136.8997882 };
-       var map = new google.maps.Map(document.getElementById('map'), {
+       var map = new google.maps.Map(document.getElementById('map-02'), {
                  zoom: 17,
                  center: {lat:35.1847893, lng:136.8997882 },
                  mapTypeControl: false,
@@ -56,5 +63,9 @@
                      map: map,
                      title: contentString
                    });
+     }
+     function initMap(){
+       initMap01()
+       initMap02()
      }
      </script>
