@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+
+   #以下、4〜11行目はadmin(管理者)関連のルーティング設定
+
+  namespace :admins do
+    get '/', to: 'homes#top'
+    get '/users', to: 'users#index'
+
+    resources :users, only: [:show, :edit, :update]
+    resources :contacts, only: [:index, :show]
+  end
+
+   #以下、admin(管理者)とpublic(会員)ルーティングを分岐。
+
   devise_for :users, module: "users"
   devise_for :admins, module: "admins"
 
@@ -25,15 +38,6 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create]
   end
 
-  #以下、admin(管理者)関連のルーティング設定
-
-  namespace :admins do
-  get '/', to: 'homes#top'
-
-  resources :users, only: [:index, :show, :edit, :update]
-  resources :contacts, only: [:index, :show]
-
-  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end

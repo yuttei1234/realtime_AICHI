@@ -16,18 +16,18 @@
         <div class="container">
           <nav class="navbar navbar-light navbar-left">
 
-          <% if request.url.include?('admin')  %>
-            <a href="/admins">
-              <%= image_tag '', size:'300x80' %>  <%# サイトのロゴマークは探して別途追加%>
-            </a>
-              <% elsif %>
-            <a href="/public/post_images">
-              <%= image_tag '', size:'300x80' %>  <%# サイトのロゴマークは探して別途追加%>
-            </a>
-              <% else %>
-            <a href="/">
-              <%= image_tag '', size:'300x80' %>  <%# サイトのロゴマークは探して別途追加%>
-            </a>
+            <% if request.url.include?('admin')  %>
+              <a href="/admins">
+                <%= image_tag '', size:'300x80' %>  <%# サイトのロゴマークは探して別途追加%>
+              </a>
+                <% elsif %>
+              <a href="/public/post_images">
+                <%= image_tag '', size:'300x80' %>  <%# サイトのロゴマークは探して別途追加%>
+              </a>
+                <% else %>
+              <a href="/">
+                <%= image_tag '', size:'300x80' %>  <%# サイトのロゴマークは探して別途追加%>
+              </a>
             <% end %>
           </nav>
 
@@ -53,7 +53,7 @@
                     <%= link_to " マイページ", public_user_path(current_user.id), class: "fas fa-user nav-link bg-light text-dark btn btn-light" %>
                   </li>
                   <li class="nav-item">
-                    <%= link_to " オススメ", public_recommendations_path, class: "fas fa-map-marker-check nav-link bg-light text-dark btn btn-light" %>
+                    <%= link_to " オススメ", public_recommendations_path, class: "fas fa-map-pin nav-link bg-light text-dark btn btn-light" %>
                   </li>
                   <li class="nav-item">
                     <%= link_to " 問い合わせ", new_public_contact_path, class: "fas fa-align-right nav-link bg-light text-dark btn btn-light" %>
@@ -64,6 +64,9 @@
 
                   <%#以下、管理者/会員がログインしていない時%>
                   <% else %>
+                  <li class="nav-item">
+                    <%= link_to " 管理者ログイン", new_admin_session_path, class: "fas fa-male nav-link bg-light text-dark btn btn-light" %>
+                  </li>
                   <li class="nav-item">
                     <%= link_to " 新規登録", new_user_registration_path, class: "fas fa-user-plus nav-link bg-light text-dark btn btn-light" %>
                   </li>

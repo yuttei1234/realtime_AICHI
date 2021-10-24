@@ -1,5 +1,7 @@
 class Public::PostImagesController < ApplicationController
 
+  before_action :move_to_index, except: [:top, :about]
+
   def index
     @post_images = PostImage.all
   end
@@ -44,6 +46,12 @@ class Public::PostImagesController < ApplicationController
     @post_image = PostImage.find(params[:id])
     @post_image.destroy
     redirect_to public_post_images_path
+  end
+
+  private
+
+  def move_to_index
+    redirect_to new_user_session_path unless user_signed_in?
   end
 
   def post_image_params
