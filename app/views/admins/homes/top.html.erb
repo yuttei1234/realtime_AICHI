@@ -17,17 +17,17 @@
           <% @users.each do |user| %>
             <tr>
               <td><%= user.id %></td>
-              <td><%= link_to user.name, admins_user_path(customer.id) %></td>
+              <td><%= link_to user.name, admins_user_path(user.id) %></td>
               <td><%= user.email %></td>
               <td>
                 <% if user.validation == false %>
-									<%= "有効" %>
-								    <% else %>
-									<%= "退会" %>
+								  <%= "有効" %>
+								<% else %>
+								  <%= "退会" %>
 								<% end %>
 							</td>
             </tr>
-            <% end %>
+          <% end %>
         </tdody>
       </table>
     </div>

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :post_comments, only: [:create, :destroy]
   end
 
-  resources :recommendation, only: [:index]
+  resources :recommendations, only: [:index]
   resources :contacts, only: [:new, :create]
   end
 
