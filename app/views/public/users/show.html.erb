@@ -1,6 +1,41 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-4 md-offset-2">
+      <h4>会員詳細情報</h4>
+    </div>
+  </div>  
+  
+  <div class="row">
+    <div class="col-md-8 md-offset-2">
+      <table>
+        <tbody>
+          <tr>
+            <td>ユーザー名</td>    
+            <td><%= @user.name %></td>   
+              <% if @user.id == current_user.id %>
+              <td><%= link_to "編集する", edit_public_user_path(@user.id), class:"btn btn-success" %></td>
+              <% end %>
+          </tr>
+          <tr>
+            <td>自己紹介文</td>    
+            <td><%= @user.introduction %></td>           
+          </tr>          
+        </tbody>
+      </table>
+    </div>    
+  </div>
+    
+  <div class="row">
+    <div class="col-md-4">
+      <h4>投稿一覧</h4>
+        <div class="d-flex justify-content-between">
+          <% @post_images.each do |post_image| %>
+            <%= link_to public_post_image_path(post_image.id) do %>
+            <%= attachment_image_tag item, :image, format: 'jpg', class: "img-responsive", fallback: 'no_image.png', size: '300x350' %></br>
+            <% end %>
+          <% end %>
+        </div>
     </div>
   </div>
+
 </div>
