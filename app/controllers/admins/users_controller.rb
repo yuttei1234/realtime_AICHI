@@ -1,5 +1,5 @@
 class Admins::UsersController < ApplicationController
-  
+
   before_action :move_to_index
 
   def index
@@ -25,7 +25,7 @@ class Admins::UsersController < ApplicationController
   end
 
   private
-  
+
   def move_to_index
     redirect_to new_admin_session_path unless user_signed_in?
   end

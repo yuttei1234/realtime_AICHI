@@ -7,7 +7,7 @@ class Public::PostImagesController < ApplicationController
   end
 
   def new
-    @post_images = PostImage.new
+    @post_image = PostImage.new
   end
 
   def create
@@ -55,7 +55,7 @@ class Public::PostImagesController < ApplicationController
   end
 
   def post_image_params
-    params.require(:post_image).permit(:user_id, :image_id, :title, :caption, :address, :latitude, :longitude)
+    params.require(:post_image).permit(:user_id, :image, :title, :caption, :address, :latitude, :longitude)
   end
 
 end
