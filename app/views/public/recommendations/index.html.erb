@@ -1,4 +1,3 @@
-
 <div class="container">
  <div class="row">
   <div class="col-5 offset-md-1">
@@ -7,97 +6,115 @@
     <p>愛知へ観光でお越しになる際はぜひ訪問してみて下さい。</p>
   </div>
   <div class="col-10 offset-md-1">
-   <h5>【名古屋城】</h5>
-   <p>金の鯱鉾で有名な人気のある観光地。</p>
-   <p>金シャチ横丁など周りのグルメスポットが充実</p>
-   <p>「劇場版 名探偵コナン 緋色の弾丸」では羽田秀吉</p>
-   <p>登場時に出てきました。聖地巡礼で行くのも有です！！</p>
-
-  <h5>アクセスマップ</h5>
-  <div id="map-101"></div>
-   <script async defer
-             src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
-   </script>
-    <script type="text/javascript">
-      function initMap101() {
-        geocoder = new google.maps.Geocoder()
-        var test = {lat:35.1847893, lng:136.8997882 };
-        var map = new google.maps.Map(document.getElementById('map-101'), {
-                  zoom: 17,
-                  center: {lat:35.1847893, lng:136.8997882 },
-                  mapTypeControl: false,
-                  streetViewControl: false
-                  });
-        var transitLayer = new google.maps.TransitLayer();
-        transitLayer.setMap(map);
-        var contentString = '住所：愛知県名古屋市中区本丸1-1';
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
-        var marker = new google.maps.Marker({
-                      position: {lat:35.1847893, lng:136.8997882 },
-                      map: map,
-                      title: contentString
-                    });
-      }
-      </script>
+   <%= image_tag '名古屋城2.jpg', size: "730x400" %>
+     <h5>【名古屋城】</h5>
+     <p>金の鯱鉾で有名な人気のある観光地。</p>
+     <p>金シャチ横丁など周りのグルメスポットが充実</p>
+     <p>「劇場版 名探偵コナン 緋色の弾丸」では羽田秀吉</p>
+     <p>登場時に出てきました。聖地巡礼で行くのも有です！！</p>
+      <h5>アクセスマップ</h5>
+      <div id="map-101"></div>
+       <script async defer
+                 src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+       </script>
+        <script type="text/javascript">
+          function initMap101() {
+            geocoder = new google.maps.Geocoder()
+            var test = {lat:35.1847893, lng:136.8997882 };
+            var map = new google.maps.Map(document.getElementById('map-101'), {
+                      zoom: 17,
+                      center: {lat:35.1847893, lng:136.8997882 },
+                      mapTypeControl: false,
+                      streetViewControl: false
+                      });
+            var transitLayer = new google.maps.TransitLayer();
+            transitLayer.setMap(map);
+            var contentString = '住所：愛知県名古屋市中区本丸1-1';
+            var infowindow = new google.maps.InfoWindow({
+              content: contentString
+            });
+            var marker = new google.maps.Marker({
+                          position: {lat:35.1847893, lng:136.8997882 },
+                          map: map,
+                          title: contentString
+                        });
+          }
+          </script>
   </div>
  </div>
+ <div class="row">
+   <div class="col-md-10 offset-md-1">
+    <%= image_tag '名古屋港.jpg', class: 'inline-block', size: "730x400" %>
+      <h5>【名古屋港】</h5>
+        <p>名古屋水族館のイルカショーは人気があって、迫力があります。</p>
+        <p>また名古屋城と同様、「劇場版 名探偵コナン 緋色の弾丸」に</p>
+        <p>複数箇所、描写されています！ポートビルや船が見える広場は</p>
+        <p>聖地巡礼にはピッタリの観光スポットです！！</p>
+         <h5>アクセスマップ</h5>
+           <div id="map-102"></div>
+              <script type="text/javascript">
+                function initMap102() {
+                  geocoder = new google.maps.Geocoder()
+                  var test = {lat:35.090758, lng:136.878493 };
+                  var map = new google.maps.Map(document.getElementById('map-102'), {
+                            zoom: 17,
+                            center: {lat:35.090758, lng:136.878493 },
+                            mapTypeControl: false,
+                            streetViewControl: false
+                            });
+                  var transitLayer = new google.maps.TransitLayer();
+                  transitLayer.setMap(map);
+                  var contentString = '住所：愛知県名古屋市港区港町1-3';
+                  var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                  });
+                  var marker = new google.maps.Marker({
+                                position: {lat:35.090758, lng:136.878493 },
+                                map: map,
+                                title: contentString
+                              });
+                }
+              </script>
+   </div>
+ </div>
+ <div class="row">
+   <div class="col-md-10 offset-md-1">
+    <%= image_tag '三光神社.jpg', class: 'inline-block', size: "730x400" %>
+     <h5>【三光神社】</h5>
+     <p>犬山城へ行く途中にある縁結びパワースポットです。</p>
+     <p>ハートの絵馬がすごくインスタ映えするので、</p>
+     <p>女性に人気があります。名鉄名古屋駅から犬山線で</p>
+     <p>犬山を観光される際に訪れてみてはいかがでしょうか。</p>
+       <h5>アクセスマップ</h5>
+         <div id="map-103"></div>
+          <script type="text/javascript">
+            function initMap103() {
+              geocoder = new google.maps.Geocoder()
+              var test = {lat:35.387142, lng:136.939494 };
+              var map = new google.maps.Map(document.getElementById('map-103'), {
+                        zoom: 17,
+                        center: {lat:35.387142, lng:136.939494 },
+                        mapTypeControl: false,
+                        streetViewControl: false
+                        });
+              var transitLayer = new google.maps.TransitLayer();
+              transitLayer.setMap(map);
+              var contentString = '住所：愛知県犬山市犬山北古券41-1';
+              var infowindow = new google.maps.InfoWindow({
+                content: contentString
+              });
+              var marker = new google.maps.Marker({
+                           position: {lat:35.387142, lng:136.939494 },
+                           map: map,
+                           title: contentString
+                           });
+              }
+              function initMap(){
+                initMap101()
+                initMap102()
+                initMap103()
+              }
+          </script>
+   </div>
+ </div>
 </div>
-
-<h5>アクセスマップ</h5>
-   <div id="map-102"></div>
-    <script type="text/javascript">
-      function initMap102() {
-        geocoder = new google.maps.Geocoder()
-        var test = {lat:35.090758, lng:136.878493 };
-        var map = new google.maps.Map(document.getElementById('map-102'), {
-                  zoom: 17,
-                  center: {lat:35.090758, lng:136.878493 },
-                  mapTypeControl: false,
-                  streetViewControl: false
-                  });
-        var transitLayer = new google.maps.TransitLayer();
-        transitLayer.setMap(map);
-        var contentString = '住所：愛知県名古屋市港区港町1-3';
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
-        var marker = new google.maps.Marker({
-                      position: {lat:35.090758, lng:136.878493 },
-                      map: map,
-                      title: contentString
-                    });
-      }
-      </script>
-
-<h5>アクセスマップ</h5>
-   <div id="map-103"></div>
-    <script type="text/javascript">
-      function initMap103() {
-        geocoder = new google.maps.Geocoder()
-        var test = {lat:35.387142, lng:136.939494 };
-        var map = new google.maps.Map(document.getElementById('map-103'), {
-                  zoom: 17,
-                  center: {lat:35.387142, lng:136.939494 },
-                  mapTypeControl: false,
-                  streetViewControl: false
-                  });
-        var transitLayer = new google.maps.TransitLayer();
-        transitLayer.setMap(map);
-        var contentString = '住所：愛知県犬山市犬山北古券41-1';
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
-        var marker = new google.maps.Marker({
-                      position: {lat:35.387142, lng:136.939494 },
-                      map: map,
-                      title: contentString
-                    });
-      }
-      function initMap(){
-        initMap101()
-        initMap102()
-        initMap103()
-      }
-      </script>
