@@ -23,12 +23,78 @@
       <%= f.label :caption, "本文" %>
       <%= f.text_area :caption, class:"form-control", placeholder: "コメント入力" %>
 
-      <%= f.label :address, "住所" %>
-      <%= f.text_field :address, class:"form-control" %>
+      <%= f.label :lat,"緯度" %>
+      <%= f.text_field :lat,:value =>"", id: :lat %>
+
+      <%= f.label :lng,"経度" %>
+      <%= f.text_field :lng,:value =>"", id: :lng %>
 
       <%= f.submit "投稿", class:"btn btn-success" %>
-
       <% end %>
     </div>
   </div>
 </div>
+
+<h2>Map</h2>
+
+<input id="address" type="textbox" value="愛知県名古屋市中村区名駅１丁目１−４">
+<input type="button" value="検索" onclick="codeAddress()">
+<p>マーカーをドラック＆ドロップで位置の調整ができます。<p>
+<div id='map'></div>
+
+
+<script>
+//初期マップの設定
+let map
+let marker
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center:  {lat: 35.1706261, lng: 136.8836},  // 名古屋駅を初回は表示
+    zoom: 17,
+  });
+}
+
+//検索後のマップ表示
+let geocoder
+let aft
+function codeAddress(){
+  let inputAddress = document.getElementById('address').value;
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+        //マーカーの複数作成不可
+        if (aft == true){
+            marker.setMap(null);
+        }
+
+        //新規マーカー作成
+        map.setCenter(results[0].geometry.location);
+            marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location,
+            draggable: true // ドラッグ可能
+        });
+
+        //二度目以降か判断
+        aft = true
+
+        //検索時、緯度経度入力
+        document.getElementById('lat').value = results[0].geometry.location.lat();
+        document.getElementById('lng').value = results[0].geometry.location.lng();
+
+        // マーカーのドロップ（ドラッグ終了）時のイベント
+        google.maps.event.addListener( marker, 'dragend', function(ev){
+            // イベントの引数evの、プロパティ.latLngが緯度経度
+            document.getElementById('lat').value = ev.latLng.lat();
+            document.getElementById('lng').value = ev.latLng.lng();
+        });
+    } else {
+      alert('該当する結果がありませんでした：' + status);
+    }
+  });
+}
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+</script>
