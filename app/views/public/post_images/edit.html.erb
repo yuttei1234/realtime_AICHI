@@ -23,7 +23,8 @@
       <%= f.label :caption, "本文" %>
       <%= f.text_area :caption, class:"form-control" %>
 
-      <%# 地図機能追加予定%>
+      <%= f.label :address, "住所" %>
+      <%= f.text_field :address, class:"form-control" %>
 
       <%= f.submit "編集保存", class:"btn btn-success" %>
       <%= link_to "投稿削除", public_post_image_path, method: :delete, class: "btn btn-danger" %>

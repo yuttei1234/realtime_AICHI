@@ -23,7 +23,8 @@
       <%= f.label :caption, "本文" %>
       <%= f.text_area :caption, class:"form-control", placeholder: "コメント入力" %>
 
-      <%# 地図機能追加予定%>
+      <%= f.label :address, "住所" %>
+      <%= f.text_field :address, class:"form-control" %>
 
       <%= f.submit "投稿", class:"btn btn-success" %>
 
