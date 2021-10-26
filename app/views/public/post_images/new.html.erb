@@ -22,6 +22,9 @@
 
       <%= f.label :caption, "本文" %>
       <%= f.text_area :caption, class:"form-control", placeholder: "コメント入力" %>
+      
+      <%= f.label :address, "住所" %>
+      <%= f.text_field :address, class:"form-control" %>
 
       <%= f.label :lat,"緯度" %>
       <%= f.text_field :lat,:value =>"", id: :lat %>
@@ -49,7 +52,6 @@ let map
 let marker
 function initMap(){
   geocoder = new google.maps.Geocoder()
-
   map = new google.maps.Map(document.getElementById('map'), {
     center:  {lat: 35.1706261, lng: 136.8836},  // 名古屋駅を初回は表示
     zoom: 17,
@@ -94,6 +96,7 @@ function codeAddress(){
     }
   });
 }
+</script>
 
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">

@@ -4,10 +4,11 @@ class CreatePostImages < ActiveRecord::Migration[5.0]
 
       t.integer :user_id
       t.string :image_id
+      t.string :address
       t.string :title
       t.text :caption
-      t.float :latitude
-      t.float :longitude
+      t.float :lat
+      t.float :lng
 
       t.timestamps
     end
