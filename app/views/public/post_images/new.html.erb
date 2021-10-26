@@ -22,15 +22,15 @@
 
       <%= f.label :caption, "本文" %>
       <%= f.text_area :caption, class:"form-control", placeholder: "コメント入力" %>
-      
+
       <%= f.label :address, "住所" %>
       <%= f.text_field :address, class:"form-control" %>
 
-      <%= f.label :lat,"緯度" %>
-      <%= f.text_field :lat,:value =>"", id: :lat %>
+      <%= f.label :latitude,"緯度" %>
+      <%= f.text_field :latitude,:value =>"", id: :latitude %>
 
-      <%= f.label :lng,"経度" %>
-      <%= f.text_field :lng,:value =>"", id: :lng %>
+      <%= f.label :longitude,"経度" %>
+      <%= f.text_field :longitude,:value =>"", id: :longitude %>
 
       <%= f.submit "投稿", class:"btn btn-success" %>
       <% end %>
@@ -82,14 +82,14 @@ function codeAddress(){
         aft = true
 
         //検索時、緯度経度入力
-        document.getElementById('lat').value = results[0].geometry.location.lat();
-        document.getElementById('lng').value = results[0].geometry.location.lng();
+        document.getElementById('latitude').value = results[0].geometry.location.lat();
+        document.getElementById('longitude').value = results[0].geometry.location.lng();
 
         // マーカーのドロップ（ドラッグ終了）時のイベント
         google.maps.event.addListener( marker, 'dragend', function(ev){
             // イベントの引数evの、プロパティ.latLngが緯度経度
-            document.getElementById('lat').value = ev.latLng.lat();
-            document.getElementById('lng').value = ev.latLng.lng();
+            document.getElementById('latitude').value = ev.latLng.lat();
+            document.getElementById('longitude').value = ev.latLng.lng();
         });
     } else {
       alert('該当する結果がありませんでした：' + status);

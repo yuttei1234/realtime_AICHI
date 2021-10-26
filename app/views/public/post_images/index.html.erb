@@ -9,12 +9,12 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-1">
+    <div class="col-md-12">
       <div id='map1'></div>
 
       <script>
         function initMap1() {
-    
+
           //初期表示位置設定
           let latlng = new google.maps.LatLng(35.1706261, 136.8836 );
           //デザイン
@@ -26,22 +26,22 @@
                 ]
                }
               ];
-    
+
           let map = new google.maps.Map(document.getElementById('map1'), {
-              zoom: 17,
+              zoom: 13,
               styles: styles,
               center: latlng
           });
           let transitLayer = new google.maps.TransitLayer();
           transitLayer.setMap(map);
-    
+
           //複数マーカー設定
           <% @post_images.each do |post_image|%>
-            ( function() { 
-              let markerLatLng = new google.maps.LatLng({lat: <%= post_image.lat %>, lng: <%= post_image.lng %>});
-              let marker = new google.maps.Marker({ 
-                position: markerLatLng, 
-                map: map 
+            ( function() {
+              let markerLatLng = new google.maps.LatLng({lat: <%= post_image.latitude %>, lng: <%= post_image.longitude %>});
+              let marker = new google.maps.Marker({
+                position: markerLatLng,
+                map: map
               });
               //マーカークリック時、詳細情報表示
               let infowindow = new google.maps.InfoWindow({
@@ -51,13 +51,13 @@
               marker.addListener('click', function() {
                 infowindow.open(map, marker);
               });
-    
+
            })();
           <% end %>
-          //複数マーカー設定 ここまで  
+          //複数マーカー設定 ここまで
       }
       </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap01"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap1"></script>
 
     </div>
   </div>

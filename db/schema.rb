@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(version: 2021_10_17_053553) do
     t.string "address"
     t.string "title"
     t.text "caption"
-    t.float "lat"
-    t.float "lng"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

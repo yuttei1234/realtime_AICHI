@@ -7,8 +7,8 @@ class CreatePostImages < ActiveRecord::Migration[5.0]
       t.string :address
       t.string :title
       t.text :caption
-      t.float :lat
-      t.float :lng
+      t.float :latitude and 
+      t.float :longitude
 
       t.timestamps
     end
