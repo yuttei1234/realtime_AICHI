@@ -6,6 +6,7 @@ class Public::ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
+    @contact.user_id = current_user.id
     if @contact.save
       redirect_to new_public_contact_path, notice:"Send succuessfully!"
     else

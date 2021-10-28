@@ -16,7 +16,7 @@
           <% @contacts.each do |contact| %>
             <tr>
               <td><%= contact.id %></td>
-              <td><%= @user.name %></td>
+              <td><%= contact.user.name %></td>
               <td><%= link_to contact.title, admins_contact_path(contact.id) %></td>
             </tr>
             <% end %>
