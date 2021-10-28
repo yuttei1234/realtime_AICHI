@@ -1,7 +1,7 @@
 class Public::PostImagesController < ApplicationController
 
   before_action :move_to_index, except: [:top, :about]
-  
+
 
   def index
     @post_images = PostImage.all
@@ -29,8 +29,10 @@ class Public::PostImagesController < ApplicationController
 
   def edit
     @post_image = PostImage.find(params[:id])
-    if @post_image.user != current_user
-      redirect_to public_post_image_path
+    if @post_image.user == current_user
+      render "edit"
+    else
+      redirect_to public_post_image_path(@post_image.id)
     end
   end
 

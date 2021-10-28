@@ -2,10 +2,10 @@
   <div class="row">
     <div class="col-md-12">
       <%= attachment_image_tag @post_image, :image, format: 'jpg', fallback: 'no_image.png', size: '400x400' %>
-        <% if @user_id == current_user.id %>
+        <% if @post_image.user.id == current_user.id %>
         <%= link_to "編集する", edit_public_post_image_path(@post_image.id), class:"btn btn-success" %>
         <% end %>
-      <%= link_to '@post_image.user.name', public_user_path(@post_image.user_id) %>
+      <%= link_to @post_image.user.name, public_user_path(@post_image.user.id) %>
         <% if @post_image.favorited_by?(current_user) %>
           <%= link_to public_post_image_favorites_path(@post_image), method: :delete do %>
           ♥ <%= @post_image.favorites.count %> いいね
