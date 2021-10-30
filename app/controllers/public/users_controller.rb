@@ -2,13 +2,6 @@ class Public::UsersController < ApplicationController
 
  before_action :authenticate_user!, except: :top
 
- def create
-  @user = User.new(user_params)
-    if @user.save
-      ThanxMailer.complete_registration(@user).deliver
-    end
- end
-
   def show
     @user = User.find(params[:id])
     @post_images = @user.post_images
