@@ -2,7 +2,6 @@ class Public::PostImagesController < ApplicationController
 
   before_action :move_to_index, except: [:top, :about]
 
-
   def index
     @post_images = PostImage.all
   end
