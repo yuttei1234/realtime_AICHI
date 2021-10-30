@@ -27,7 +27,7 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -61,8 +61,8 @@ Rails.application.configure do
     address: "smtp.gmail.com",
     domain: 'gmail.com',
     port: 587,
-    user_name: "test",#Rails.application.credentials.gmail[:name],
-    password: "test",#Rails.application.credentials.gmail[:password],
+    user_name: ENV["GOOGLE_USERNAME"],
+    password: ENV["GOOGLE_PASSWORD"],
     authentication: :login,
     enable_starttls_auto: true
   }

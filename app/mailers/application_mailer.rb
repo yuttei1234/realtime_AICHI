@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: '管理者'
+  default from: ENV["GOOGLE_USERNAME"]
   layout 'mailer'
 end

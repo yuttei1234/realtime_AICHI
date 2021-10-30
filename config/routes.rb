@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   namespace :public do
 
-  resources :users, only: [:create, :show, :edit, :update]do
+  resources :users, only: [:show, :edit, :update]do
     collection do
       get 'unsubscribe'
       patch 'withdraw'
