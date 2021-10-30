@@ -14,5 +14,10 @@ module RealtimeAichi
 
     #dotenv
     Dotenv::Railtie.load
+
+  config.load_defaults 5.2
+  config.i18n.default_locale = :ja
+  config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
+  
   end
 end

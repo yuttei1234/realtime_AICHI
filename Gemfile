@@ -58,6 +58,8 @@ gem 'pry-byebug' #デバック機能
 gem 'kaminari', '~> 1.2.1' #ページネーション機能
 gem "pry-rails"  #デバック機能
 gem 'enum_help' #Enum(翻訳)機能
+gem 'rails-i18n' #翻訳機能
+gem 'devise-i18n-views'#翻訳機能
 gem 'dotenv-rails' #地図/暗号保護機能
 gem 'geocoder' #地図機能
 gem 'font-awesome-sass' #font-awesome付与機能
