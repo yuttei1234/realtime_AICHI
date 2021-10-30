@@ -1,7 +1,5 @@
 class Admins::UsersController < ApplicationController
 
-  before_action :move_to_index
-
   def index
     @users = User.all
     @users = User.page(params[:page]).per(10)
@@ -25,10 +23,6 @@ class Admins::UsersController < ApplicationController
   end
 
   private
-
-  def move_to_index
-    redirect_to new_admin_session_path unless user_signed_in?
-  end
 
   def user_params
     params.require(:user).permit(:name, :telephone_number, :email, :validation)

@@ -12,7 +12,7 @@
   </div>
   <div class="row">
     <div class="col-md-9 offset-md-3">
-      <%= form_with model: @post_image, url: public_post_images_path(@post_image.id),local:true do |f| %>
+      <%= form_with model: @post_image, url: public_post_image_path(@post_image.id),local:true do |f| %>
 
       <%= f.label :image, "画像" %>
       <%= f.attachment_field :image %>

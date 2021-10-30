@@ -3,7 +3,6 @@ class Admins::HomesController < ApplicationController
   before_action :move_to_index, except: [:top]
 
   def top
-    # binding.pry
     @users = User.all
     @users = User.page(params[:page]).per(10)
   end
