@@ -1,12 +1,13 @@
 <div class="container">
   <div class="row">
-    <h3>会員詳細情報</h3>
-      <div class="col-md-12">
-        <table>
+    <div class="col-md-1"></div>
+      <div class="col-md-9 offset-md-2">
+       <h2><%= image_tag 'logo8.png', size:'250x50', class: "subtitle01" %></h2>
+        <table class="usertable1">
           <tbody>
             <tr>
               <td>会員No.</td>
-              <td><%= @user.id%></td>
+              <td><%= @user.id %></td>
             </tr>
              <tr>
               <td>ユーザー名</td>
@@ -32,11 +33,12 @@
             </tr>
           </tbody>
         </table>
-      </div>
     </div>
+  </div>
   <div class="row">
-    <div class="col-md-10 offset-md-2">
-      <%= link_to "情報を編集", edit_admins_user_path(@user.id), class: "btn btn-success" %>
+    <div class="col-md-1"></div>
+    <div class="col-md-9 offset-md-2">
+      <%= link_to "情報を編集", edit_admins_user_path(@user.id), class: "btn btn-success clickbutton1" %>
     </div>
   </div>
 </div>

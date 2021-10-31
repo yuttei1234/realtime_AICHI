@@ -1,47 +1,44 @@
 <div class="container">
-
   <div class="row">
-    <h5>会員詳細情報編集</h5>
-  </div>
-
-  <div class="row">
-    <%= form_with model:@user, url: admins_user_path(@user), class:"form-horizontal", local:true do |f| %>
-      <div class="col-md-12">
-        <table>
-          <tbody>
-            <tr>
-              <td>会員No.</td>
-              <td><%= @user.id%></td>
-            </tr>
-             <tr>
-              <td>ユーザー名</td>
-              <td><%= f.text_field :name, class: "form-control" %></td>
-            </tr>
-            <tr>
-              <td>メールアドレス</td>
-              <td><%= f.email_field :email, autocomplete: "email", class: "form-control" %></td>
-            </tr>
-            <tr>
-              <td>電話番号</td>
-              <td><%= f.text_field :telephone_number, class: "form-control" %></td>
-            </tr>
-            <tr>
-              <td>会員ステータス</td>
-              <td>
-                <%= f.radio_button :validation, false %>
-                <%= f.label :validation, "有効", value: true %>
-              </td>
-              <td>
-                <%= f.radio_button :validation, true %>
-                <%= f.label :validation, "退会", value: false %>
-              </td>
-            </tr>
-            <tr>
-              <td><%= f.submit "編集を保存", class:"btn btn-success mt-3 offset-md-10" %></td>
-            </tr>
-          </tbody>
-        </table>
+    <div class="col-md-1"></div>
+      <div class="col-md-9 offset-md-2">
+        <h2><%= image_tag 'logo9.png', size:'300x50', class: "subtitle01" %></h2>
+          <%= form_with model:@user, url: admins_user_path(@user.id), class:"form-horizontal", local:true do |f| %>
+            <table class="usertable2">
+              <tbody>
+                <tr>
+                  <td>会員No.</td>
+                  <td><%= @user.id%></td>
+                </tr>
+                 <tr>
+                  <td>ユーザー名</td>
+                  <td><%= f.text_field :name, class: "form-control" %></td>
+                </tr>
+                <tr>
+                  <td>メールアドレス</td>
+                  <td><%= f.email_field :email, autocomplete: "email", class: "form-control" %></td>
+                </tr>
+                <tr>
+                  <td>電話番号</td>
+                  <td><%= f.text_field :telephone_number, class: "form-control" %></td>
+                </tr>
+                <tr>
+                  <td>会員ステータス</td>
+                  <td>
+                    <%= f.radio_button :validation, false %>
+                    <%= f.label :validation, "有効", value: true %>
+                  </td>
+                  <td>
+                    <%= f.radio_button :validation, true %>
+                    <%= f.label :validation, "退会", value: false %>
+                  </td>
+                </tr>
+                <tr>
+                  <td><%= f.submit "編集を保存", class:"btn btn-success mt-3 offset-md-10" %></td>
+                </tr>
+              </tbody>
+            </table>
+          <% end %>
       </div>
-    <% end %>
   </div>
 </div>
