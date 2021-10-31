@@ -1,39 +1,37 @@
 <div class="container">
   <div class="row">
-    <h2 class="m-1">会員詳細情報編集</h2>
-  </div>
-
-  <div class="row">
-    <div class="col-md-10">
-        <%= form_with model:@user, url: public_user_path(@user.id), local:true do |f| %>
-        <table>
-          <tbody>
-            <tr>
-              <td><%= f.label :name, "ユーザー名" %></td>
-              <td><%= f.text_field :name %></td>
-            </tr>
-            <tr>
-              <td><%= f.label :email, "メールアドレス"  %></td>
-              <td><%= f.email_field :email, autocomplete: "email" %></td>
-            </tr>
-            </tr>
-            <tr>
-              <td><%= f.label :telephone_number, "電話番号" %></td>
-              <td><%= f.text_field :telephone_number  %></td>
-            </tr>
-            <tr>
-              <td><%= f.label :introduction, "自己紹介" %></td>
-              <td><%= f.text_area :introduction  %></td>
-            </tr>
-            <tr>
-              <td>
-                <%= f.submit "編集を保存", class: "btn btn-success" %>
-                <%= link_to "退会する", unsubscribe_public_users_path, class: "btn btn-danger" %>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <% end %>
-    </div>
+    <div class="col-md-1"></div>
+      <div class="col-md-9 offset-md-2">
+        <h2><%= image_tag 'logo9.png', size:'300x50', class: "title03" %></h2>
+          <%= form_with model:@user, url: public_user_path(@user.id), local:true do |f| %>
+            <table class="usertable02">
+              <tbody>
+                <tr>
+                  <td><%= f.label :name, "ユーザー名" %></td>
+                  <td><%= f.text_field :name, class: "form-control"  %></td>
+                </tr>
+                <tr>
+                  <td><%= f.label :email, "メールアドレス"  %></td>
+                  <td><%= f.email_field :email, autocomplete: "email", class: "form-control" %></td>
+                </tr>
+                </tr>
+                <tr>
+                  <td><%= f.label :telephone_number, "電話番号" %></td>
+                  <td><%= f.text_field :telephone_number, class: "form-control"  %></td>
+                </tr>
+                <tr>
+                  <td><%= f.label :introduction, "自己紹介" %></td>
+                  <td><%= f.text_area :introduction, class: "form-control"  %></td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= f.submit "編集を保存", class: "btn btn-success button04" %>
+                    <%= link_to "退会する", unsubscribe_public_users_path, class: "btn btn-danger button05" %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <% end %>
+      </div>
   </div>
 </div>
