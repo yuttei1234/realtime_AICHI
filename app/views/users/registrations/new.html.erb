@@ -1,44 +1,47 @@
 <div class="container">
   <div class="row">
-    <h3 class="ms-1">新規登録</h3>
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "users/shared/error_messages", resource: resource %>
-        <table>
-          <tbody>
-            <tr>
-              <td><%= f.label :name, "ユーザー名" %></td>
-              <td><%= f.text_field :name %></td>
-            </tr>
-            <tr>
-              <td><%= f.label :email, "メールアドレス" %></td>
-              <td><%= f.text_field :email, autocomplete: "email"  %></td>
-            </tr>
-            <tr>
-              <td><%= f.label :telephone_number, "電話番号" %></td>
-              <td><%= f.text_field :telephone_number  %></td>
-            </tr>
-            <tr>
-              <td><%= f.label :introduction, "自己紹介" %></td>
-              <td><%= f.text_area :introduction %></td>
-            </tr>
-            <tr>
-              <td><%= f.label :password, "パスワード" %></td>
-              <td>
-                <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %>文字のパスワードは必須)</em>
-                <% end %><br />
-                <%= f.password_field :password, autocomplete: "new-password" %>
-              </td>
-            </tr>
-            <tr>
-              <td><%= f.label :password_confirmation, "パスワード確認用" %></td>
-              <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
-            </tr>
-            <tr>
-              <td><%= f.submit "ログイン", class:"btn btn-success" %></td>
-            </tr>
-          </tbody>
-        </table>
-      <% end %>
+    <div class="col-md-1"></div>
+    <div class="col-md-10 offset-md-1">
+      <h3><%= image_tag 'logo4.png', size:'400x100', class: "subtitle" %></h3>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "users/shared/error_messages", resource: resource %>
+          <table>
+            <tbody>
+              <tr>
+                <td><%= f.label :name, "ユーザー名", class: "signcontent" %></td>
+                <td><%= f.text_field :name, class: "signupdata"%></td>
+              </tr>
+              <tr>
+                <td><%= f.label :email, "メールアドレス", class: "signcontent" %></td>
+                <td><%= f.text_field :email, autocomplete: "email", class: "signupdata" %></td>
+              </tr>
+              <tr>
+                <td><%= f.label :telephone_number, "電話番号", class: "signcontent" %></td>
+                <td><%= f.text_field :telephone_number, class: "signupdata"%></td>
+              </tr>
+              <tr>
+                <td><%= f.label :introduction, "自己紹介", class: "signcontent" %></td>
+                <td><%= f.text_area :introduction, class: "signupdata2"%></td>
+              </tr>
+              <tr>
+                <td><%= f.label :password, "パスワード", class: "signcontent" %></td>
+                <td>
+                  <%= f.password_field :password, autocomplete: "new-password", class: "signupdata3" %>
+                    <% if @minimum_password_length %>
+                    <em>(<%= @minimum_password_length %>文字のパスワードは必須)</em>
+                    <% end %><br />
+                </td>
+              </tr>
+              <tr>
+                <td><%= f.label :password_confirmation, "パスワード確認用", class: "signcontent" %></td>
+                <td><%= f.password_field :password_confirmation, autocomplete: "new-password", class: "signupdata3" %></td>
+              </tr>
+              <tr>
+                <td><%= f.submit "ログイン", class:"btn btn-success subtitle02" %></td>
+              </tr>
+            </tbody>
+          </table>
+        <% end %>
+    </div>
   </div>
 </div>

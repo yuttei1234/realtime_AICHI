@@ -1,17 +1,19 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-9 col-md-offset-1 m-4">
-      <div class="center-block m-5">
-        <a class="text-center"><%= image_tag 'logo2.png', size:'400x150' %></a>
-        <p class="text-center">このサイトは愛知県の「今」をリアルタイムで知ることができます。</p>
-        <p class="text-center">当サイト紹介文は閲覧可能ですが、各投稿の閲覧につきましては</p>
-        <p class="text-center">ログインが必要になります。以下ボタンからご参加下さい。</p>
+    <div class="col-md-3"></div>
+    <div class="col-md-8 col-md-offset-1 m-4">
+      <div class="mx-auto my-5">
+        <%= image_tag 'logo2.png', size:'400x150', class: "subtitle" %>
+        <p>このサイトは愛知県の「今」をリアルタイムで知ることができます。</p>
+        <p>当サイト紹介文は閲覧可能ですが、各投稿の閲覧につきましては</p>
+        <p>ログインが必要になります。以下ボタンからご参加下さい。</p>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-5 col-md-offset-1">
-      <%= link_to "ログイン", new_user_session_path, class:"btn btn-success" %>
+    <div class="col-md-5"></div>
+    <div class="col-md-5 col-md-offset-2">
+      <%= link_to "ログイン", new_user_session_path, class:"btn btn-success w-25 p-2 subtitle2" %>
     </div>
   </div>
 </div>

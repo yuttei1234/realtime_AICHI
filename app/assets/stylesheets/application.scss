@@ -17,3 +17,30 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+//以下5つはログインと新規登録ページ(users/regsiteration(session)/new)に必要なコード
+
+.signcontent {
+  margin-bottom: 10px;
+}
+
+.signupdata {
+  width: 300px;
+  margin-left: 5px;
+  margin-bottom: 15px;
+}
+
+.signupdata2 {
+  width: 400px;
+  margin-left: 5px;
+  margin-bottom: 15px;
+}
+
+.signupdata3 {
+  margin-left: 5px;
+  margin-bottom: 15px;
+}
+
+.subtitle02 {
+  margin-top: 10px;
+}

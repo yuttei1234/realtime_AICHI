@@ -1,16 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <h3>ログイン</h3>
+    <div class="col-md-1"></div>
+    <div class="col-md-9 offset-md-2">
+      <h2><%= image_tag 'logo5.png', size:'400x100', class: "subtitle" %></h2>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
             <%= f.label :email, "メールアドレス" %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "signupdata" %>
           </div>
 
           <div class="field">
             <%= f.label :password, "パスワード" %><br />
-            <%= f.password_field :password, autocomplete: "current-password" %>
+            <%= f.password_field :password, autocomplete: "current-password", class: "signupdata" %>
           </div>
 
           <% if devise_mapping.rememberable? %>
@@ -21,14 +22,14 @@
           <% end %>
 
           <div class="actions">
-            <%= f.submit "ログイン", class:"btn btn-success" %>
+            <%= f.submit "ログイン", class:"btn btn-success subtitle02"  %>
           </div>
         <% end %>
 
-        <%= render "users/shared/links" %>
+        <p><%= render "users/shared/links" %></p>
 
-        <p class="text-center text-background">会員登録がお済みでない方</p>
-        <p class="text-center">こちらから新規登録を行って下さい。</p>
+        <p>会員登録がお済みでない方</p>
+        <p>こちらから新規登録を行って下さい。</p>
         <div><%= link_to "新規作成",new_user_registration_path, class:"btn btn-success" %></div>
 
     </div>
