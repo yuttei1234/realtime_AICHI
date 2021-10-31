@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-9 offset-md-2">
-      <h3>問い合わせ詳細情報</h3>
-        <table>
+      <h2><%= image_tag 'logo11.png', size:'250x50', class: "subtitle01" %></h2>
+        <table class="contact2">
           <tbody>
             <tr><td>ユーザー名</td></tr>
             <tr><td><%= @contact.user.name %></td></tr>
@@ -13,7 +13,7 @@
             <tr><td><%= @contact.message %></td></tr>
           </tbody>
         </table>
-         <%= link_to "一覧へ戻る", admins_contacts_path, class: "btn btn-primary" %>
+         <%= link_to "一覧へ戻る", admins_contacts_path, class: "btn btn-primary button01" %>
     </div>
   </div>
 </div>

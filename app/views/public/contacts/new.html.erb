@@ -1,29 +1,25 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-10">
-      <%= form_with model:@contact, url: public_contacts_path, local:true do |f| %>
-
-      <div class="form-group">
-        <%= f.label :title, '問い合わせタイトル' %>
-      </div>
-
-      <div class="form-group">
-        <%= f.text_field :title %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :message, '問い合わせ本文' %>
-      </div>
-
-       <div class="form-group">
-        <%= f.text_area :message %>
-      </div>
-
-      <div class="actions mt-4">
-        <%= f.submit '投稿', class:"btn btn-success" %>
-      </div>
-
-      <% end %>
+    <div class="col-md-1"></div>
+    <div class="col-md-9 offset-md-2">
+      <h2><%= image_tag 'logo12.png', size:'300x50', class: "contacttitle" %></h2>
+        <%= form_with model:@contact, url: public_contacts_path, local:true do |f| %>
+          <div class="form-group">
+            <%= f.label :title, '問い合わせタイトル' %>
+          </div>
+          <div class="form-group">
+            <%= f.text_field :title, class: "contactinput" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :message, '問い合わせ本文' %>
+          </div>
+           <div class="form-group">
+            <%= f.text_area :message, class: "contactinput2" %>
+          </div>
+          <div class="actions mt-4">
+            <%= f.submit '投稿', class:"btn btn-success" %>
+          </div>
+        <% end %>
     </div>
   </div>
 </div>
