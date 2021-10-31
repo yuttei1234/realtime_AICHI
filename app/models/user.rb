@@ -10,6 +10,6 @@ class User < ApplicationRecord
   has_many :contacts, dependent: :destroy
 
   validates :name, presence: true
-  validates :password, presence: true
+  validates :password, presence: true, on: :create
 
 end

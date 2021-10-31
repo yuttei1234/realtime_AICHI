@@ -18,10 +18,11 @@ class Public::UsersController < ApplicationController
 
   def update
     @user = current_user
+    #byebug
     if @user.update(user_params)
       redirect_to public_user_path(@user.id), notice:"Update profile!"
     else
-      render "users/edit"
+      render :edit
     end
   end
 
