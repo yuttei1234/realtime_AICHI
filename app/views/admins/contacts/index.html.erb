@@ -1,30 +1,29 @@
 <div class="container">
   <div class="row">
-    <h4>問い合わせ一覧</h4>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <table>
-        <thead>
-           <tr>
-            <th>No.</th>
-            <th>ユーザー名</th>
-            <th>問い合わせタイトル</th>
-          </tr>
-        </thead>
-        <tdody>
-          <% @contacts.each do |contact| %>
+    <div class="col-md-1"></div>
+    <div class="col-md-9 offset-md-2">
+      <h2><%= image_tag 'logo10.png', size:'250x50', class: "subtitle01" %></h2>
+        <table class="contacttable">
+          <thead>
             <tr>
-              <td><%= contact.id %></td>
-              <td><%= contact.user.name %></td>
-              <td><%= link_to contact.title, admins_contact_path(contact.id) %></td>
+              <th>No.</th>
+              <th>ユーザー名</th>
+              <th>問い合わせタイトル</th>
             </tr>
+          </thead>
+          <tdody>
+            <% @contacts.each do |contact| %>
+              <tr>
+                <td><%= contact.id %></td>
+                <td><%= contact.user.name %></td>
+                <td><%= link_to contact.title, admins_contact_path(contact.id) %></td>
+              </tr>
             <% end %>
-        </tdody>
-      </table>
+          </tdody>
+        </table>
     </div>
-  </div>
-  <div class="mx-auto">
-    <%= paginate @contacts %>
+    <div class="mx-auto">
+      <%= paginate @contacts %>
+    </div>
   </div>
 </div>
