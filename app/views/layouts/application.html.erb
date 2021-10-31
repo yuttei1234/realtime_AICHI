@@ -18,15 +18,15 @@
 
             <% if request.url.include?('admin')  %>
               <a href="/admins">
-                <%= image_tag '', size:'300x80' %>  <%# サイトのロゴマークは探して別途追加%>
+                <%= image_tag 'logo.png', size:'300x80' %>  <%# サイトのロゴマークは探して別途追加%>
               </a>
                 <% elsif %>
               <a href="/public/post_images">
-                <%= image_tag '', size:'300x80' %>  <%# サイトのロゴマークは探して別途追加%>
+                <%= image_tag 'logo.png', size:'300x80' %>  <%# サイトのロゴマークは探して別途追加%>
               </a>
                 <% else %>
               <a href="/">
-                <%= image_tag '', size:'300x80' %>  <%# サイトのロゴマークは探して別途追加%>
+                <%= image_tag 'logo.png', size:'300x80' %>  <%# サイトのロゴマークは探して別途追加%>
               </a>
             <% end %>
           </nav>
