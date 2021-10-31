@@ -1,9 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4 offset-md-1">
+    <div class="col-md-1"></div>
+    <div class="col-md-9 offset-md-1">
       <h4>新規投稿</h4>
         <% if @post_image.errors.any? %>
-          <%= @post_image.errors.count %>件がエラーが発生しました。
+          <%= @post_image.errors.count %>件がエラーが発生しました。</br>
           <% @post_image.errors.full_messages.each do |message| %>
             <%= message %>
           <% end %>
@@ -11,7 +12,8 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-9 offset-md-3">
+    <div class="col-md-1"></div>
+    <div class="col-md-9 offset-md-1">
       <%= form_with model: @post_image, url: public_post_images_path, local:true do |f| %>
 
       <%= f.label :image, "画像" %>
@@ -38,13 +40,16 @@
   </div>
 </div>
 
-<h2>Map</h2>
-
-<input id="address" type="textbox" value="愛知県名古屋市中村区名駅１丁目１−４">
-<input type="button" value="検索" onclick="codeAddress()">
-<p>マーカーをドラック＆ドロップで位置の調整ができます。<p>
-<div id='map'></div>
-
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-9 offset-md-2">
+    <h2>Map</h2>
+      <input id="address" type="textbox" value="愛知県名古屋市中村区名駅１丁目１−４">
+      <input type="button" value="検索" onclick="codeAddress()">
+        <p>マーカーをドラック＆ドロップで位置の調整ができます。<p>
+    <div id='map'></div>
+  </div>
+</div>
 
 <script>
 //初期マップの設定

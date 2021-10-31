@@ -4,34 +4,30 @@
       <div class="col-md-9 offset-md-2">
         <h2><%= image_tag 'logo9.png', size:'300x50', class: "title03" %></h2>
           <%= form_with model:@user, url: public_user_path(@user.id), local:true do |f| %>
-            <table class="usertable02">
+            <table>
               <tbody>
                 <tr>
-                  <td><%= f.label :name, "ユーザー名" %></td>
-                  <td><%= f.text_field :name, class: "form-control"  %></td>
+                  <td><%= f.label :name, "ユーザー名", class: "usertitle" %></td>
+                  <td><%= f.text_field :name,class: "usercontent" %></td>
                 </tr>
                 <tr>
-                  <td><%= f.label :email, "メールアドレス"  %></td>
-                  <td><%= f.email_field :email, autocomplete: "email", class: "form-control" %></td>
+                  <td><%= f.label :email, "メールアドレス", class: "usertitle"  %></td>
+                  <td><%= f.email_field :email, autocomplete: "email",class: "usercontent" %></td>
                 </tr>
                 </tr>
                 <tr>
-                  <td><%= f.label :telephone_number, "電話番号" %></td>
-                  <td><%= f.text_field :telephone_number, class: "form-control"  %></td>
+                  <td><%= f.label :telephone_number, "電話番号", class: "usertitle" %></td>
+                  <td><%= f.text_field :telephone_number, class: "usercontent"  %></td>
                 </tr>
                 <tr>
-                  <td><%= f.label :introduction, "自己紹介" %></td>
-                  <td><%= f.text_area :introduction, class: "form-control"  %></td>
-                </tr>
-                <tr>
-                  <td>
-                    <%= f.submit "編集を保存", class: "btn btn-success button04" %>
-                    <%= link_to "退会する", unsubscribe_public_users_path, class: "btn btn-danger button05" %>
-                  </td>
+                  <td><%= f.label :introduction, "自己紹介", class: "usertitle" %></td>
+                  <td><%= f.text_area :introduction, class: "usercontent2" %></td>
                 </tr>
               </tbody>
             </table>
-            <% end %>
+          <%= f.submit "編集を保存", class: "btn btn-success button06" %>
+          <%= link_to "退会する", unsubscribe_public_users_path, class: "btn btn-danger button07" %>
+          <% end %>
       </div>
   </div>
 </div>

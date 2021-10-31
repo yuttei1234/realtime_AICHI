@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 md-offset-2">
-      <h2><%= image_tag 'logo8.png', size:'250x50', class: "title03" %></h2>
+      <%= image_tag 'logo8.png', size:'250x50' %>
     </div>
   </div>
 
@@ -27,7 +27,7 @@
 
   <div class="row">
     <div class="col-md-4">
-      <h4>投稿一覧</h4>
+      <h4 class="postindexs">投稿一覧</h4>
         <div class="d-flex justify-content-between">
           <% @post_images.each do |post_image| %>
             <%= link_to public_post_image_path(post_image.id) do %>
