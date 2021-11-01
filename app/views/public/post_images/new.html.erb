@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-9 offset-md-1">
-      <h4>新規投稿</h4>
+      <h3><%= image_tag 'logo15.png', size:'300x75', class: "subtitle" %></h3>
         <% if @post_image.errors.any? %>
           <%= @post_image.errors.count %>件がエラーが発生しました。</br>
           <% @post_image.errors.full_messages.each do |message| %>
@@ -15,41 +15,52 @@
     <div class="col-md-1"></div>
     <div class="col-md-9 offset-md-1">
       <%= form_with model: @post_image, url: public_post_images_path, local:true do |f| %>
-
-      <%= f.label :image, "画像" %>
-      <%= f.attachment_field :image %> <br/>
-
-      <%= f.label :title, "タイトル" %>
-      <%= f.text_field :title, class:"form-control" %>
-
-      <%= f.label :caption, "本文" %>
-      <%= f.text_area :caption, class:"form-control", placeholder: "コメント入力" %>
-
-      <%= f.label :address, "住所" %>
-      <%= f.text_field :address, class:"form-control" %>
-
-      <%= f.label :latitude,"緯度" %>
-      <%= f.text_field :latitude,:value =>"", id: :latitude %>
-
-      <%= f.label :longitude,"経度" %>
-      <%= f.text_field :longitude,:value =>"", id: :longitude %>
-
-      <%= f.submit "投稿", class:"btn btn-success" %>
-      <% end %>
+      <table>
+        <tbody>
+          <tr>
+            <td><%= f.label :image, "画像", class: "posttitle"  %></td>
+            <td><%= f.attachment_field :image, class: "postcontent" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :title, "タイトル", class: "posttitle" %></td>
+            <td><%= f.text_field :title, class: "postcontent" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :caption, "本文", class: "posttitle"  %></td>
+            <td><%= f.text_area :caption, class: "postcontent1", placeholder: "コメント入力" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :address, "住所", class: "posttitle"  %></td>
+            <td><%= f.text_field :address, class: "postcontent" %> </td>
+          </tr>
+          <tr>
+            <td><%= f.label :latitude,"緯度", class: "posttitle"  %></td>
+            <td><%= f.text_field :latitude,:value =>"", id: :latitude, class: "postcontent2" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :longitude,"経度", class: "posttitle"  %></td>
+            <td><%= f.text_field :longitude,:value =>"", id: :longitude, class: "postcontent2" %></td>
+          </tr>
+          <tr>
+            <td><%= f.submit "投稿", class:"btn btn-success posting" %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9 offset-md-2">
+      <h2 class="posttitle">マップ</h2>
+        <input id="address" type="textbox" value="愛知県名古屋市中村区名駅１丁目１−４", class= "postmap" >
+        <input type="button" value="検索" onclick="codeAddress()">
+          <p class="posttitle">マーカーをドラック＆ドロップで位置の調整ができます。<p>
+    <div id='map'></div>
     </div>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-1"></div>
-  <div class="col-md-9 offset-md-2">
-    <h2>Map</h2>
-      <input id="address" type="textbox" value="愛知県名古屋市中村区名駅１丁目１−４">
-      <input type="button" value="検索" onclick="codeAddress()">
-        <p>マーカーをドラック＆ドロップで位置の調整ができます。<p>
-    <div id='map'></div>
-  </div>
-</div>
+
 
 <script>
 //初期マップの設定

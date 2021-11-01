@@ -4,7 +4,7 @@
 
 #map {
   height: 600px;
-  width: 600px;
+  width: 800px;
 }
 
 
@@ -16,4 +16,38 @@
 
 .maintitle {
   margin-bottom: 15px;
+}
+
+.posttitle{
+  margin-bottom: 20px;
+}
+
+.postcontent {
+  width: 400px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.postcontent1 {
+  width: 400px;
+  height: 150px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.postcontent2 {
+  width: 200px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.posting {
+  width: 100px;
+  height: 45px;
+  margin-bottom: 20px;
+}
+
+input.postmap {
+  width: 450px;
+  margin-bottom: 10px;
 }
