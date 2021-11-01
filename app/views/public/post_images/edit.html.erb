@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4 offset-md-1">
-      <h4>投稿編集</h4>
+    <div class="col-md-1"></div>
+    <div class="col-md-9 offset-md-2">
+      <h2><%= image_tag 'logo17.png', size:'300x50' %></h2>
         <% if @post_image.errors.any? %>
           <%= @post_image.errors.count %>件がエラーが発生しました。
           <% @post_image.errors.full_messages.each do |message| %>
@@ -11,24 +12,33 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-9 offset-md-3">
+    <div class="col-md-1"></div>
+    <div class="col-md-9 offset-md-2">
       <%= form_with model: @post_image, url: public_post_image_path(@post_image.id),local:true do |f| %>
-
-      <%= f.label :image, "画像" %>
-      <%= f.attachment_field :image %>
-
-      <%= f.label :title, "タイトル" %>
-      <%= f.text_field :title, class:"form-control" %>
-
-      <%= f.label :caption, "本文" %>
-      <%= f.text_area :caption, class:"form-control" %>
-
-      <%= f.label :address, "住所" %>
-      <%= f.text_field :address, class:"form-control" %>
-
-      <%= f.submit "編集保存", class:"btn btn-success" %>
-      <%= link_to "投稿削除", public_post_image_path(@post_image.id), method: :delete, class: "btn btn-danger" %>
-
+      <table class="postdetail1">
+        <tbody>
+          <tr>
+            <td><%= f.label :image, "画像", class: "posttitle"  %></td>
+            <td><%= f.attachment_field :image, class: "postcontent" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :title, "タイトル", class: "posttitle"  %></td>
+            <td><%= f.text_field :title, class: "postcontent" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :caption, "本文", class: "posttitle"  %></td>
+            <td><%= f.text_area :caption, class: "postcontent1" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :address, "住所", class: "posttitle"  %></td>
+            <td><%= f.text_field :address, class: "postcontent" %></td>
+          </tr>
+          <tr>
+            <td><%= f.submit "編集保存", class:"btn btn-success btn-lg buttonedit " %></td>
+            <td><%= link_to "投稿削除", public_post_image_path(@post_image.id), method: :delete, class: "btn btn-danger btn-lg buttondelte" %></td>
+          </tr>
+        </tbody>
+      </table>
       <% end %>
     </div>
   </div>

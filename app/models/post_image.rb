@@ -12,7 +12,7 @@ class PostImage < ApplicationRecord
   validates :image, presence: true
   validates :title, presence: true
   validates :caption, presence: true
-  validates :caption, length: { maximum: 100 }
+  validates :caption, length: { maximum: 200 }
   validates :address, presence: true
 
   geocoded_by :address
