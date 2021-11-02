@@ -31,7 +31,7 @@
         <div class="d-flex justify-content-between">
           <% @post_images.each do |post_image| %>
             <%= link_to public_post_image_path(post_image.id) do %>
-            <%= attachment_image_tag post_image, :image, format: 'jpg', class: "img-responsive", fallback: 'no_image.png', size: '300x350' %></br>
+            <%= attachment_image_tag post_image, :image, format: 'jpg', class: "postpics", fallback: 'no_image.png', size: '300x350' %></br>
             <% end %>
           <% end %>
         </div>

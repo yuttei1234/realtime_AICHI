@@ -32,7 +32,10 @@
     <div class="col-md-1"></div>
     <div class="col-md-9 offset-md-2">
         <% @post_image.post_comments.each do |post_comment| %>
-          <%= post_comment.user.name %> <%= post_comment.comment %>
+          <div class="commentarea">
+            <%= post_comment.user.name %>
+            <%= post_comment.comment %>
+          </div>
         <% end %>
     </div>
   </div>
@@ -40,9 +43,13 @@
     <div class="col-md-1"></div>
     <div class="col-md-9 offset-md-2">
       <%= form_with model:[@post_image, @post_comment], url: public_post_image_post_comments_path(@post_image.id), local: true do |f| %>
-      <%= f.label :comment, "コメント入力" %>
-      <%= f.text_area :comment, rows:'3'  %>
-      <%= f.submit "コメント送信", class: "btn btn-success" %>
+      <table>
+        <tbody>
+          <tr><td><%= f.label :comment, "コメント入力" %></td></tr>
+          <tr><td><%= f.text_area :comment, class: "postcontent3" %></td></tr>
+          <tr><td><%= f.submit "コメント送信", class: "btn btn-success commentposting" %></td></tr>
+        </tbody>
+      </table>
       <% end %>
     </div>
   </div>
