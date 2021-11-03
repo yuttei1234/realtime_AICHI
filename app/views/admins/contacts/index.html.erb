@@ -3,7 +3,7 @@
     <div class="col-md-1"></div>
     <div class="col-md-9 offset-md-2">
       <h2><%= image_tag 'logo10.png', size:'250x50', class: "subtitle01" %></h2>
-        <table class="contacttable">
+        <table>
           <thead>
             <tr>
               <th>No.</th>
@@ -14,9 +14,9 @@
           <tdody>
             <% @contacts.each do |contact| %>
               <tr>
-                <td><%= contact.id %></td>
-                <td><%= contact.user.name %></td>
-                <td><%= link_to contact.title, admins_contact_path(contact.id) %></td>
+                <td class="contactlist1"><%= contact.id %></td>
+                <td class="contactlist2"><%= contact.user.name %></td>
+                <td class="contactlist3"><%= link_to contact.title, admins_contact_path(contact.id) %></td>
               </tr>
             <% end %>
           </tdody>

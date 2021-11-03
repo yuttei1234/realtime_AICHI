@@ -3,7 +3,7 @@
     <div class="col-md-1"></div>
     <div class="col-md-9 col-md-2">
       <h2><%= image_tag 'logo7.png', size:'250x50', class: "subtitle01" %></h2>
-      <table class="usertable">
+      <table>
         <thead>
            <tr>
             <th>会員No</th>
@@ -15,10 +15,10 @@
         <tdody>
           <% @users.each do |user| %>
             <tr>
-              <td><%= user.id %></td>
-              <td><%= link_to user.name, admins_user_path(user.id) %></td>
-              <td><%= user.email %></td>
-              <td>
+              <td class="userlist1"><%= user.id %></td>
+              <td class="userlist2"><%= link_to user.name, admins_user_path(user.id) %></td>
+              <td class="userlist3"><%= user.email %></td>
+              <td class="userlist4">
                 <% if user.validation == false %>
 									<%= "有効" %>
 								    <% else %>
