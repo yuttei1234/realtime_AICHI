@@ -60,5 +60,10 @@ table.usertable02 {
 }
 
 .postpics {
-  margin: auto 40px;
+  margin: 10px;
+  flex-direction: column;
+}
+
+.posts_images2 {
+  flex-wrap: wrap;
 }
