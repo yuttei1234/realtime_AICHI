@@ -6,7 +6,7 @@
         <table class="contact2">
           <tbody>
             <tr><td>ユーザー名</td></tr>
-            <tr><td><%= @contact.user.name %></td></tr>
+            <tr><td><%= link_to @contact.user.name, admins_user_path(@contact.user.id) %></td></tr>
             <tr><td>問い合わせタイトル</td></tr>
             <tr><td><%= @contact.title %></td></tr>
             <tr><td>問い合わせ本文</td></tr>
