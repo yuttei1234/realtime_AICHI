@@ -27,3 +27,5 @@
 /config/credentials.yml.enc
 
 /config/secrets.yml
+
+.practice-aws.pem
