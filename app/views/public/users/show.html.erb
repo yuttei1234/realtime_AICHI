@@ -12,23 +12,22 @@
     <div class="col-md-8 md-offset-2">
       <table>
         <tbody>
-          <tr><td>ユーザー名</td><tr></tr>
-          <tr><td><%= @user.name %></td></tr>
-          <tr><td>自己紹介</td></tr>
-          <tr><td><%= @user.introduction %></td></tr>
+          <tr><td class="username0">ユーザー名</td><tr></tr>
+          <tr><td class="username1"><%= @user.name %></td></tr>
+          <tr><td class="username1">自己紹介</td></tr>
+          <tr><td class="username1"><%= @user.introduction %></td></tr>
         </tbody>
       </table>
     </div>
   </div>
 
   <div class="row">
-    <h4 class="postindexs">投稿一覧</h4>
-      <div class="posts_images2">
-        <% @post_images.each do |post_image| %>
-          <%= link_to public_post_image_path(post_image.id) do %>
-          <%= attachment_image_tag post_image, :image, format: 'jpg', class: "postpics ", fallback: 'no_image.png', size: '300x350' %>
-          <% end %>
+    <div class="posts_images2">
+      <% @post_images.each do |post_image| %>
+        <%= link_to public_post_image_path(post_image.id) do %>
+        <%= attachment_image_tag post_image, :image, format: 'jpg', class: "postpics", fallback: 'no_image.png', size: '300x350' %>
         <% end %>
+      <% end %>
     </div>
   </div>
 </div>

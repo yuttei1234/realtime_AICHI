@@ -50,15 +50,20 @@ table.usertable02 {
   height: 100px;
 }
 
-.postindexs {
-  margin: 10px 0px 20px 0px;
-}
-
 .postpics {
   margin: 10px;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .posts_images2 {
   flex-wrap: wrap;
+}
+
+.username0 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.username1 {
+  padding-bottom: 10px;
 }
