@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-10">
+    <div class="col-md-7">
       <h2><%= image_tag 'logo3.png', size:'400x100', class: "subtitle" %></h2>
       <p>2021年に10月発表された都道府県魅力度ランキング2021。</p>
       <p>大都市且つ観光地で有名な大阪や神奈川、福岡がトップ10入りする中、</p>
@@ -12,13 +12,16 @@
       <p>皆様の1つ1つの投稿が「愛知県」をより魅力ある街にしてくれると思います。</p>
       <p>愛知を訪れた方、1箇所でも観光地を知っている皆様の力を貸してください。</p>
       <p>ログインはこちら↓↓↓から！一緒に「愛知」を魅力ある街にしましょう！！</p>
-
+    </div>
+    <div class="col-md-3">
+      <div class="aboutpic0"></div>
+      <%= image_tag '名古屋街並み.jpg', size: '400x340' %>
     </div>
   </div>
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-5 col-md-offset-1">
-      <%= link_to "ログイン", new_user_session_path, class:"btn btn-success subtitle2 w-25 p-2" %>
+      <%= link_to "ログイン", new_user_session_path, class: "btn btn-success subtitle2 w-25 p-2" %>
     </div>
   </div>
 </div>

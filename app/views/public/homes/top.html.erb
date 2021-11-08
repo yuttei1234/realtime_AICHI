@@ -1,19 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-8 col-md-offset-1 m-4">
-      <div class="mx-auto my-5">
-        <%= image_tag 'logo2.png', size:'400x150', class: "subtitle" %>
+    <div class="col-md-3">
+      <div class="homepic0"></div>
+       <%= image_tag 'ノリタケイオン(Home用).jpg', size: '400x340' %>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-7">
+      <%= image_tag 'logo2.png', size:'400x150', class: "subtitle" %>
         <p>このサイトは愛知県の「今」をリアルタイムで知ることができます。</p>
         <p>当サイト紹介文は閲覧可能ですが、各投稿の閲覧につきましては</p>
         <p>ログインが必要になります。以下ボタンからご参加下さい。</p>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-5"></div>
-    <div class="col-md-5 col-md-offset-2">
-      <%= link_to "ログイン", new_user_session_path, class:"btn btn-success w-25 p-2 subtitle2" %>
+      <%= link_to "ログイン", new_user_session_path, class: "btn btn-success subtitle3 w-25 p-2" %>
     </div>
   </div>
 </div>
