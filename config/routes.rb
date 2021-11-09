@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   devise_for :users, module: "users"
   devise_for :admins, module: "admins"
 
-  root 'public/homes#top'
+  devise_scope :user do
+    root "users/sessions#new"
+  end
+
   get 'homes/about' => 'public/homes#about'
 
   #以下、public(会員)関連のルーティング設定

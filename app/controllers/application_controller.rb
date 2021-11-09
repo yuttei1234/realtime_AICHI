@@ -16,7 +16,10 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
+    if resource_class == User
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :telephone_number, :introduction])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:email])
+    end
   end
 
   # def after_sign_out_path_for(resource)
