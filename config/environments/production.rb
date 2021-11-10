@@ -87,7 +87,7 @@ Rails.application.configure do
   #以下本番環境下でのメール送信機能実装
 
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { host => :sendmail/:file/:test}
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
