@@ -61,9 +61,14 @@ gem 'enum_help' #Enum(翻訳)機能
 gem 'rails-i18n' #翻訳機能
 gem 'devise-i18n-views'#翻訳機能
 
-gem 'dotenv-rails'#地図/暗号保護機能
+gem 'dotenv-rails' #SQLダウンロード
 group :production do
   gem 'mysql2'
+end
+
+gem 'dotenv-rails', groups: [:development, :test, :production] #開発,テスト,本番環境用意
+group :development, :test, :production do
+    gem 'dotenv-rails', groups: [:development, :test, :production]
 end
 
 gem 'geocoder' #地図機能
