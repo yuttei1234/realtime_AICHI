@@ -34,6 +34,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem "pry-rails"
+  gem 'pry-byebug' #デバック機能
 end
 
 group :development do
@@ -54,21 +55,19 @@ gem "refile", require: "refile/rails", github: 'manfe/refile' #ファイルア�
 gem "refile-mini_magick" # アップロードした画像のリサイズ機能
 gem 'bootstrap', '~> 4.5' #Bootstrap機能
 gem 'jquery-rails' #Bootstrap機能
-gem 'pry-byebug' #デバック機能
 gem 'kaminari', '~> 1.2.1' #ページネーション機能
-gem "pry-rails"  #デバック機能
 gem 'enum_help' #Enum(翻訳)機能
 gem 'rails-i18n' #翻訳機能
 gem 'devise-i18n-views'#翻訳機能
 
 gem 'dotenv-rails' #SQLダウンロード
 group :production do
-  gem 'mysql2'
+ gem 'mysql2'
 end
 
 gem 'dotenv-rails', groups: [:development, :test, :production] #開発,テスト,本番環境用意
 group :development, :test, :production do
-    gem 'dotenv-rails', groups: [:development, :test, :production]
+  gem 'dotenv-rails', groups: [:development, :test, :production]
 end
 
 gem 'geocoder' #地図機能
