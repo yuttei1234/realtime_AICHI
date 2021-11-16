@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-9 col-md-2">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
       <h2><%= image_tag 'logo7.png', size:'250x50', class: "subtitle01" %></h2>
       <table>
         <thead>
@@ -9,7 +10,7 @@
             <th>会員No</th>
             <th>ユーザー名</th>
             <th>メールアドレス</th>
-            <th>ステータス</th>
+            <th>現状</th>
           </tr>
         </thead>
         <tdody>
@@ -20,9 +21,9 @@
               <td class="userlist3"><%= user.email %></td>
               <td class="userlist4">
                 <% if user.validation == false %>
-									<%= "有効" %>
+									<%= " o" %>
 								    <% else %>
-									<%= "退会" %>
+									<%= " x" %>
 								<% end %>
 							</td>
             </tr>

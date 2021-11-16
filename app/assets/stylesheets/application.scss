@@ -55,3 +55,10 @@
 .topsubtitle3 {
   margin: 15px 0 15px 0;
 }
+
+@media screen and (max-width:425px) {
+  .maintitle{
+    width: 300px;
+    height: 270px;
+  }
+}

@@ -44,3 +44,26 @@ td.userlist3 {
 td.userlist4 {
   padding-bottom: 5px 0;
 }
+
+@media screen and (max-width:425px) {
+  table {
+    width: 90%;
+    height: 250px;
+  }
+
+  td.userlist1 {
+    padding: 0 50px 5px 0;
+  }
+
+  td.userlist2 {
+    padding: 0 50px 5px 0;
+  }
+
+  td.userlist3 {
+    padding: 0 50px 5px 0;
+  }
+
+  td.userlist4 {
+    padding-bottom: 5px 0;
+  }
+}
