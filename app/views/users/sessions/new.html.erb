@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container top-container">
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-9 offset-md-2">
-      <h2><%= image_tag 'logo5.png', size:'400x100', class: "subtitle" %></h2>
+      <%= image_tag 'logo5.png', size:'200x', class: "subtitle" %>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
             <%= f.label :email, "メールアドレス" %><br />

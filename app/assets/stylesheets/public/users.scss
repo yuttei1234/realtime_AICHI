@@ -67,3 +67,15 @@ table.usertable02 {
 .username1 {
   padding-bottom: 10px;
 }
+
+@media screen and (max-width:768px) {
+  .top-container {
+    height: 85%;
+  }
+
+  header {
+    height: 15%;
+    width: 100vh;
+  }
+
+}
