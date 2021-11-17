@@ -3,8 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #map {
-  height: 600px;
-  width: 800px;
+  height: 400px;
+  width: 600px;
 }
 
 
@@ -16,6 +16,7 @@
 
 .maintitle {
   margin-bottom: 15px;
+  margin-left: 35px;
 }
 
 .posttitle{
@@ -78,4 +79,19 @@ input.postmap {
 
 .commentposting {
   margin-top: 10px;
+}
+
+@media screen and (max-width:768px) {
+
+  #map1 {
+    height: 400px;
+    width: 350px;
+  }
+
+  .maintitle {
+    height: 200px;
+    width: 200px;
+    margin-left: 60px;
+  }
+
 }
