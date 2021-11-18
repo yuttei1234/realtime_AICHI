@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-7">
-      <h2><%= image_tag 'logo3.png', size:'400x100', class: "subtitle" %></h2>
+      <h2><%= image_tag 'logo3.png', size:'240x90', class: "subtitle" %></h2>
       <p>都道府県魅力度ランキング2021で</p>
       <p>愛知県は20位に終わる残念な結果に。<i class="far fa-sad-tear"></i></p>
       <p>ここから愛知県へ魅力度UPの為に</p>
@@ -12,16 +12,11 @@
       <p>「愛知」を魅力ある街するために</p>
       <p>皆様の情報網を頼らさせて下さい！</p>
       <p>ログインはこちらから！↓↓↓</p>
+        <%= link_to "ログイン", new_user_session_path, class: "btn btn-success subtitle2 w-25 p-2" %>
     </div>
     <div class="col-md-3">
       <div class="aboutpic0"></div>
-      <%= image_tag '名古屋街並み.jpg', size: '400x340' %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-5 col-md-offset-1">
-      <%= link_to "ログイン", new_user_session_path, class: "btn btn-success subtitle2 w-25 p-2" %>
+      <%= image_tag '名古屋街並み.jpg', size: '400x400', class: "aboutpagepic" %>
     </div>
   </div>
 </div>

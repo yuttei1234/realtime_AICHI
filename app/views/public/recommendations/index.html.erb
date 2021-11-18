@@ -6,111 +6,37 @@
     <p>愛知へお越しの際は是非！！</p>
   </div>
   <div class="col-10 offset-md-1 text1">
-   <%= image_tag '名古屋城.jpg', size: "730x400", class: "picsetting"  %>
+   <%= image_tag '名古屋城.jpg', size: "600x400", class: "picsetting"  %>
      <h5>【名古屋城】</h5>
      <p>金の鯱鉾で名高い観光地。</p>
      <p>金シャチ横丁など城廻りが充実。</p>
      <p>「劇場版 名探偵コナン 緋色の弾丸」の</p>
      <p>羽田秀吉登場時に描写されています。</p>
       <h5>アクセスマップ</h5>
-      <div id="map-101"></div>
-       <script async defer
-               src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
-       </script>
-        <script type="text/javascript">
-          function initMap101() {
-            geocoder = new google.maps.Geocoder()
-            var map = new google.maps.Map(document.getElementById('map-101'), {
-                      zoom: 17,
-                      center: {lat:35.1847893, lng:136.8997882 },
-                      mapTypeControl: false,
-                      streetViewControl: false
-                      });
-            var transitLayer = new google.maps.TransitLayer();
-            transitLayer.setMap(map);
-            var contentString = '住所：愛知県名古屋市中区本丸1-1';
-            var infowindow = new google.maps.InfoWindow({
-                content: contentString
-            });
-            var marker = new google.maps.Marker({
-                          position: {lat:35.1847893, lng:136.8997882 },
-                          map: map,
-                          title: contentString
-                        });
-          }
-          </script>
+       <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3260.8695204790697!2d136.8999662!3d35.1848045!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1637242758480!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="placemap"></iframe>
   </div>
  </div>
  <div class="row">
    <div class="col-md-10 offset-md-1 text1">
-    <%= image_tag '名古屋港.jpg', class: 'inline-block', size: "730x400", class: "picsetting"  %>
+    <%= image_tag '名古屋港.jpg', class: 'inline-block', size: "600x400", class: "picsetting"  %>
       <h5>【名古屋港】</h5>
         <p>名古屋水族館のイルカショーは人気。</p>
         <p>「劇場版 名探偵コナン 緋色の弾丸」に</p>
         <p>複数箇所、描写されています！</p>
         <p>聖地巡礼に現地へ行ってみては！？</p>
          <h5>アクセスマップ</h5>
-           <div id="map-102"></div>
-              <script type="text/javascript">
-                function initMap102() {
-                  geocoder = new google.maps.Geocoder()
-                  var map = new google.maps.Map(document.getElementById('map-102'), {
-                            zoom: 17,
-                            center: {lat:35.090758, lng:136.878493 },
-                            mapTypeControl: false,
-                            streetViewControl: false
-                            });
-                  var transitLayer = new google.maps.TransitLayer();
-                  transitLayer.setMap(map);
-                  var contentString = '住所：愛知県名古屋市港区港町1-3';
-                  var infowindow = new google.maps.InfoWindow({
-                      content: contentString
-                  });
-                  var marker = new google.maps.Marker({
-                                position: {lat:35.090758, lng:136.878493 },
-                                map: map,
-                                title: contentString
-                              });
-                }
-              </script>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3264.6186816441896!2d136.878802!3d35.0912592!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1637242342779!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="placemap"></iframe>
    </div>
  </div>
  <div class="row">
    <div class="col-md-10 offset-md-1 text1">
-    <%= image_tag '三光神社.jpg', class: 'inline-block', size: "730x400", class: "picsetting"  %>
+    <%= image_tag '三光神社.jpg', class: 'inline-block', size: "600x400", class: "picsetting"  %>
      <h5>【三光神社】</h5>
      <p>県内でも有名な縁結びパワースポット。</p>
      <p>インスタ映えするので、女性に人気。</p>
      <p>犬山観光時にはオススメです！！</p>
        <h5>アクセスマップ</h5>
-         <div id="map-103"></div>
-          <script type="text/javascript">
-            function initMap103() {
-              geocoder = new google.maps.Geocoder()
-              var map = new google.maps.Map(document.getElementById('map-103'), {
-                        zoom: 17,
-                        center: {lat:35.387142, lng:136.939494 },
-                        mapTypeControl: false,
-                        streetViewControl: false
-                        });
-              var transitLayer = new google.maps.TransitLayer();
-              transitLayer.setMap(map);
-              var contentString = '住所：愛知県犬山市犬山北古券41-1';
-              var infowindow = new google.maps.InfoWindow({
-                  content: contentString
-              });
-              var marker = new google.maps.Marker({
-                           position: {lat:35.387142, lng:136.939494 },
-                           map: map,
-                           title: contentString
-                           });
-              }
-              function initMap(){
-                initMap101()
-                initMap102()
-                initMap103()
-              }
-          </script>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1371.8267597209808!2d136.93943555843663!3d35.3870465775308!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1637243012258!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="placemap"></iframe>
    </div>
  </div>
 </div>

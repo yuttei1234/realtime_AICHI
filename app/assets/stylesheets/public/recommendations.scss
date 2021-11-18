@@ -7,11 +7,6 @@
   width: 80%;
 }
 
-#map-102 {
-  height: 300px;
-  width: 80%;
-}
-
 #map-103 {
   height: 300px;
   width: 80%;
@@ -25,16 +20,21 @@
 @media screen and (max-width:768px) {
 
   .text1 {
-    width: 300px;
+    width: 350px;
   }
 
   .picsetting {
-    width: 250px;
+    width: 350px;
     height: 250px;
   }
 
   .recommendationtitle {
     width: 300px;
+  }
+
+  .placemap {
+    width: 350px;
+    height: 250px;
   }
 
 }
